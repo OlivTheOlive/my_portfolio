@@ -6,9 +6,7 @@ const CustomCursor: React.FC = () => {
     const handleMouseMove = (e: MouseEvent) => {
       const cursor = document.querySelector(".custom-cursor") as HTMLElement;
       if (cursor) {
-        cursor.style.transform = `translate(${e.clientX}px, ${
-          e.clientY + 1000
-        }px)`;
+        cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
       }
     };
 

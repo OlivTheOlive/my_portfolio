@@ -7,8 +7,8 @@ import FlashEffect from "@/components/flashAnimation";
 export default function Home() {
   return (
     <div>
+      <CustomCursor />
       <Navbar />
-      {/* <CustomCursor /> */}
       {/* <FlashEffect /> */}
     </div>
   );
