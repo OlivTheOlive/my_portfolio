@@ -1,0 +1,26 @@
+.flash-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full height to capture clicks anywhere */
+  overflow: hidden; /* Ensure no overflow during animation */
+}
+
+.flash-effect {
+  width: 50px; /* Width of the flash */
+  height: 50px; /* Height of the flash */
+  border-radius: 50%; /* Circular shape */
+  background-color: rgba(255, 255, 255, 0.8); /* Flash color */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); /* Glow effect */
+  animation: flash-animation 0.3s ease forwards; /* Animation */
+}
+
+@keyframes flash-animation {
+  0% {
+    transform: scale(0); /* Start from scale 0 */
+    opacity: 1; /* Fully opaque at the start */
+  }
+  100% {
+    transform: scale(1); /* Scale to full size */
+    opacity: 0; /* Fade out */
+  }
+}
