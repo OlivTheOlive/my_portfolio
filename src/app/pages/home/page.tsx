@@ -3,12 +3,12 @@ import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Rocket from "@/app/lottieAnimation/rocket.json";
 import Tilt from "react-parallax-tilt";
-import WaterDropGrid from "@/components/dotGrid/page";
+import WaterDropGrid from "@/app/components/dotGrid/page";
 import { Button } from "@material-tailwind/react";
 import TypewriterComponent from "typewriter-effect";
 
 // Import the custom hook
-import useInView from "@/components/observer/pages";
+import useInView from "@/app/components/observer/pages";
 
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
@@ -44,7 +44,7 @@ const HomePage: React.FC = () => {
                   "Software Developer",
                   "MERN Stack Developer",
                   "Canadian Frenchman",
-                  "Beagle Owner",
+                  "Beagles Are Loud",
                 ],
                 autoStart: true,
                 loop: true,
@@ -79,7 +79,7 @@ const HomePage: React.FC = () => {
               onPointerLeaveCapture={undefined}
               ripple={false}
             >
-              {"About Me".split("").map((child, id) => (
+              {"Who Am I?".split("").map((child, id) => (
                 <span className="hoverText" key={id}>
                   {child}
                 </span>

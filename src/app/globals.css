@@ -19,7 +19,7 @@
 body {
   color: rgb(var(--foreground-rgb));
   /* cursor: none; */
-  background: linear-gradient(180deg, #000428 0%, #004e92 100%);
+  background: linear-gradient(180deg, #000008 0%, #003e92 100%);
   /* cursor: none !important; */
 }
 

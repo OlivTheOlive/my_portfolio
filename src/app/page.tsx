@@ -1,23 +1,33 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
-import Navbar from "@/components/navBar";
-import CustomCursor from "@/components/customCursor";
-import Footer from "@/components/footer";
-import HomePage from "@/home/page";
+import Head from "next/head";
+import Navbar from "@/app/components/navBar";
+import Footer from "@/app/components/footer";
+import HomePage from "@/app/pages/home/page";
 import { GridLoader } from "react-spinners";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     setLoading(true);
 
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setLoading(false);
     }, 1900);
+
+    // Cleanup the timeout on component unmount
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <div>
+      <Head>
+        <title>Olivie Bergeron</title>
+        <meta name="description" content="My Portfolio" />
+      </Head>
+
       {loading ? (
         <div className="loader">
           <GridLoader
