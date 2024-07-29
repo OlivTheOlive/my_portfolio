@@ -6,8 +6,9 @@ import Tilt from "react-parallax-tilt";
 import WaterDropGrid from "@/components/dotGrid/page";
 import { Button } from "@material-tailwind/react";
 import TypewriterComponent from "typewriter-effect";
-import useInView from "@/components/observer/pages";
+
 // Import the custom hook
+import useInView from "@/components/observer/pages";
 
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 

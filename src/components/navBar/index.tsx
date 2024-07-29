@@ -112,7 +112,9 @@ const navbar: React.FC = () => {
       placeholder={undefined}
       onPointerEnterCapture={undefined}
       onPointerLeaveCapture={undefined}
-      style={{ backgroundColor: "black" }}
+      style={{
+        background: " rgba(0, 0, 0, 0)",
+      }}
     >
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <Typography

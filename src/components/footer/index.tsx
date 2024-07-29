@@ -5,11 +5,15 @@ import { FaGithub, FaLinkedin } from "react-icons/fa"; // Import GitHub and Link
 const Footer: React.FC = () => {
   return (
     <footer
-      style={{ backgroundColor: "black" }}
+      style={{
+        background: " rgba(0, 0, 0, 0)",
+      }}
       className="w-full bg-white p-8"
     >
       <div
-        style={{ backgroundColor: "black" }}
+        style={{
+          background: " rgba(0, 0, 0, 0)",
+        }}
         className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 text-center md:justify-between"
       >
         <svg
@@ -97,6 +101,9 @@ const Footer: React.FC = () => {
         placeholder={undefined}
         onPointerEnterCapture={undefined}
         onPointerLeaveCapture={undefined}
+        style={{
+          background: " rgba(0, 0, 0, 0)",
+        }}
       >
         &copy; 2024 Olivie Bergeron
       </Typography>
