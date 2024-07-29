@@ -3,15 +3,30 @@ import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Rocket from "@/app/lottieAnimation/rocket.json";
 import Tilt from "react-parallax-tilt";
+import WaterDropGrid from "@/components/dotGrid/page";
+import { Button } from "@material-tailwind/react";
+import TypewriterComponent from "typewriter-effect";
+import useInView from "@/components/observer/pages";
+// Import the custom hook
 
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 const HomePage: React.FC = () => {
   const [isClient, setIsClient] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  // Use the custom hook for the About Me section
+  const [aboutRef, isInView] = useInView({ threshold: 0.1 });
 
   useEffect(() => {
     setIsClient(true);
   }, []);
+
+  useEffect(() => {
+    if (isInView) {
+      setOpen(true);
+    }
+  }, [isInView]);
 
   return (
     <div>
@@ -19,8 +34,24 @@ const HomePage: React.FC = () => {
         <div className="HomeText">
           <h1>Hi There!</h1>
           <h1>
-            I'M <b>Olivie Bergeron</b>
+            I'm <b>Olivie Bergeron</b>
           </h1>
+          <h3>
+            <TypewriterComponent
+              options={{
+                strings: [
+                  "Software Developer",
+                  "MERN Stack Developer",
+                  "Canadian Frenchman",
+                  "Beagle Owner",
+                ],
+                autoStart: true,
+                loop: true,
+                delay: 70,
+                deleteSpeed: 20,
+              }}
+            ></TypewriterComponent>
+          </h3>
           {/* <Typed /> */}
         </div>
         {isClient && (
@@ -33,29 +64,44 @@ const HomePage: React.FC = () => {
           </Tilt>
         )}
       </div>
-      <div className="AboutPage ">
-        <div className="AboutText">
+      <div className="AboutPage">
+        {/* <Tilt> */}
+        <WaterDropGrid />
+        {/* </Tilt> */}
+
+        <div className="AboutText" ref={aboutRef}>
           <h1 className="AboutTextHeading">
-            Brief <b>introduction</b>
+            <Button
+              onClick={() => setOpen((prev) => !prev)}
+              placeholder={undefined}
+              onPointerEnterCapture={undefined}
+              onPointerLeaveCapture={undefined}
+              ripple={false}
+            >
+              {"About Me".split("").map((child, id) => (
+                <span className="hoverText" key={id}>
+                  {child}
+                </span>
+              ))}
+            </Button>
           </h1>
-          <p>
-            I love the process of changing a raw idea into a website or a
-            product that impacts lives. I want to do work that challenges me as
-            a developer & work that I can be proud of.
-            <br />
-            <br />I have a solid foundation in <b>Java and JavaScript</b> and
-            know a bit of <b>Python</b> and am working on a few projects in the{" "}
-            <b>MERN</b> stack.
-            <br />I am currently learning <b>Next.js</b> and <b>Typescript</b>
-            .
-            <br />
-            <br />
-            {/* <CiCoffeeCup style={{ scale: "1.5", rotate: "15deg" }} /> */}
-          </p>
+
+          <div className={`collapsible-content ${open ? "open" : ""}`}>
+            <p>
+              I love the process of changing a raw idea into a website or a
+              product that impacts lives. I want to do work that challenges me
+              as a developer & work that I can be proud of.
+              <br />
+              <br />I have a solid foundation in <b>Java and JavaScript</b> and
+              know a bit of <b>Python</b> and am working on a few projects in
+              the <b>MERN</b> stack.
+              <br />I am currently learning <b>Next.js</b> and <b>Typescript</b>
+              .
+              <br />
+              <br />
+            </p>
+          </div>
         </div>
-        {/* <Tilt>
-          <img className="Avatar" src={Avatar} alt="Avatar" />
-        </Tilt> */}
       </div>
     </div>
   );

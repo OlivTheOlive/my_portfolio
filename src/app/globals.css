@@ -125,7 +125,7 @@ body {
 .AboutText {
   width: 50%;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 15px;
   line-height: 30px;
   letter-spacing: 1.2px;
 }
@@ -135,11 +135,50 @@ body {
   padding-bottom: 40px;
 }
 .AboutText a {
-  color: #9067c6;
+  /* color: #9067c6; */
   text-decoration: underline;
   font-weight: bold;
 }
 
 .Avatar {
   width: 280px;
+}
+
+.hoverText {
+  transition: 0.35s font-weight, 0.35s color;
+}
+
+.hoverText:hover {
+  font-weight: 900;
+  color: #9067c6;
+}
+
+/* To the right */
+.hoverText:hover + .hoverText {
+  font-weight: 500;
+  color: #9067c6;
+}
+
+.hoverText:hover + .hoverText + .hoverText {
+  font-weight: 300;
+}
+
+/* To the left */
+.hoverText:has(+ .hoverText:hover) {
+  font-weight: 500;
+  color: #9067c6;
+}
+
+.hoverText:has(+ .hoverText + .hoverText:hover) {
+  font-weight: 300;
+}
+
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease-out;
+}
+
+.collapsible-content.open {
+  max-height: 500px; /* Set this to a value large enough to fit the content */
 }
