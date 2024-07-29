@@ -2,7 +2,7 @@ import React from "react";
 import { Typography } from "@material-tailwind/react";
 import { FaGithub, FaLinkedin } from "react-icons/fa"; // Import GitHub and LinkedIn icons
 
-const Footer: React.FC = () => {
+const FooterComponent: React.FC = () => {
   return (
     <footer
       style={{
@@ -111,4 +111,4 @@ const Footer: React.FC = () => {
   );
 };
 
-export default Footer;
+export default FooterComponent;

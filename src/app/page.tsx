@@ -2,10 +2,10 @@
 
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
-import Navbar from "@/app/components/navBar";
-import Footer from "@/app/components/footer";
-import HomePage from "@/app/pages/home/page";
+import HomePage from "@/app/home/page";
 import { GridLoader } from "react-spinners";
+import NavbarComponent from "./components/navBar";
+import FooterComponent from "./components/footer";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -40,9 +40,9 @@ export default function Home() {
         </div>
       ) : (
         <div>
-          <Navbar />
+          <NavbarComponent />
           <HomePage />
-          <Footer />
+          <FooterComponent />
         </div>
       )}
     </div>
