@@ -77,7 +77,7 @@ const Footer: React.FC = () => {
 
         <div className="flex space-x-4">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/OlivTheOlive"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white"
@@ -85,7 +85,7 @@ const Footer: React.FC = () => {
             <FaGithub size={30} />
           </a>
           <a
-            href="https://www.linkedin.com/in/yourusername/"
+            href="https://www.linkedin.com/in/olivié-bergeron/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white"
