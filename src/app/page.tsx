@@ -2,14 +2,16 @@
 import React from "react";
 import Navbar from "@/components/navBar";
 import CustomCursor from "@/components/customCursor";
-import FlashEffect from "@/components/flashAnimation";
+import Footer from "@/components/footer";
+import HomePage from "@/home/page";
 
 export default function Home() {
   return (
     <div>
       <CustomCursor />
       <Navbar />
-      {/* <FlashEffect /> */}
+      <HomePage />
+      <Footer />
     </div>
   );
 }
