@@ -153,7 +153,6 @@ body {
   color: #9067c6;
 }
 
-/* To the right */
 .hoverText:hover + .hoverText {
   font-weight: 500;
   color: #9067c6;
@@ -163,7 +162,6 @@ body {
   font-weight: 300;
 }
 
-/* To the left */
 .hoverText:has(+ .hoverText:hover) {
   font-weight: 500;
   color: #9067c6;
@@ -180,5 +178,60 @@ body {
 }
 
 .collapsible-content.open {
-  max-height: 500px; /* Set this to a value large enough to fit the content */
+  max-height: 500px;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.about-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1rem; /* Adds padding to the wrapper for consistent spacing */
+}
+
+.about-title {
+  align-self: flex-start; /* Aligns the title to the left */
+  margin-left: 0.5rem; /* Adjusts left margin for alignment */
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  max-width: 1000px;
+  width: 100%;
+  justify-content: center;
+  align-items: start; /* Ensures the content starts at the top */
+}
+
+.skills-section {
+  margin-top: 1rem;
+}
+
+.skills-category {
+  margin-bottom: 1rem;
+  font-size: 20px;
+}
+
+.skill-bar {
+  border-radius: 4px;
+  display: grid;
+  flex-wrap: wrap; /* Allow chips to wrap to the next line */
+  gap: 0.5rem; /* Optional: Adjust the space between chips */
+}
+
+.skill-bar.professional,
+.skill-bar.fun {
+  font-size: 18px;
+  max-width: calc(
+    (100% - (5 * 0.5rem)) / 6
+  ); /* Adjust '0.5rem' with your actual gap */
 }

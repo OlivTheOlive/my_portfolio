@@ -6,7 +6,7 @@ import {
   Button,
   MobileNav,
 } from "@material-tailwind/react";
-import Link from "next/link"; // Import Link from next/link
+import Link from "next/link";
 import React from "react";
 
 const NavbarComponent: React.FC = () => {
@@ -30,7 +30,7 @@ const NavbarComponent: React.FC = () => {
         onPointerEnterCapture={undefined}
         onPointerLeaveCapture={undefined}
       >
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center no-underline">
           Home
         </Link>
       </Typography>
@@ -44,7 +44,7 @@ const NavbarComponent: React.FC = () => {
         onPointerEnterCapture={undefined}
         onPointerLeaveCapture={undefined}
       >
-        <Link href="/about" className="flex items-center">
+        <Link href="/about" className="flex items-center no-underline">
           About
         </Link>
       </Typography>
@@ -58,7 +58,7 @@ const NavbarComponent: React.FC = () => {
         onPointerEnterCapture={undefined}
         onPointerLeaveCapture={undefined}
       >
-        <Link href="/projects" className="flex items-center">
+        <Link href="/projects" className="flex items-center no-underline">
           Projects
         </Link>
       </Typography>
@@ -67,10 +67,8 @@ const NavbarComponent: React.FC = () => {
 
   return (
     <Navbar
-      className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4"
-      style={{
-        background: " rgba(0, 0, 0, 0)",
-      }}
+      className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 border-none shadow-none"
+      style={{ background: "rgba(0, 0, 0, 0)" }}
       placeholder={undefined}
       onPointerEnterCapture={undefined}
       onPointerLeaveCapture={undefined}
@@ -79,13 +77,13 @@ const NavbarComponent: React.FC = () => {
         <Typography
           as="a"
           href="/"
-          className="mr-4 cursor-pointer py-1.5 font-medium"
+          className="mr-4 cursor-pointer py-1.5 font-medium no-underline"
           style={{ fontSize: 30 }}
           placeholder={undefined}
           onPointerEnterCapture={undefined}
           onPointerLeaveCapture={undefined}
         >
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center no-underline">
             OB
           </Link>
         </Typography>

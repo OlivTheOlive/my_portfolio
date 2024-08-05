@@ -1,8 +1,16 @@
-"use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
+import AboutPage from "./AboutPage";
+import { Metadata } from "next";
 
-const page: React.FC = () => {
-  return <div>test</div>;
+export const metadata: Metadata = {
+  title: "Olivie Bergeron",
+  description: "About",
 };
 
-export default page;
+export default function page() {
+  return (
+    <>
+      <AboutPage />
+    </>
+  );
+}
