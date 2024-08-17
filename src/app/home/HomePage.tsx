@@ -9,6 +9,7 @@ import TypewriterComponent from "typewriter-effect";
 
 // Import the custom hook
 import useInView from "@/app/components/observer/pages";
+import HoverText from "../components/hoverAnimation";
 
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
@@ -33,9 +34,14 @@ const HomePage: React.FC = () => {
     <div>
       <div className="HomePage">
         <div className="HomeText">
-          <h1>Hi There!</h1>
           <h1>
-            I'm <b>Olivie Bergeron</b>
+            <HoverText text="Hello There!" />
+          </h1>
+          <h1>
+            I'm{" "}
+            <b>
+              <HoverText text="Olivie Bergeron" />
+            </b>
           </h1>
           <h3>
             <TypewriterComponent
@@ -79,11 +85,7 @@ const HomePage: React.FC = () => {
               onPointerLeaveCapture={undefined}
               ripple={false}
             >
-              {"Who Am I?".split("").map((child, id) => (
-                <span className="hoverText" key={id}>
-                  {child}
-                </span>
-              ))}
+              <HoverText text="Who Am I??" />
             </Button>
           </h1>
 

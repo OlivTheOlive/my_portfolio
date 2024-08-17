@@ -1,66 +1,9 @@
 "use client";
 import React from "react";
 import { Typography } from "@material-tailwind/react";
-import TypewriterComponent from "typewriter-effect";
-import SkillChip from "../components/chipComponent";
+import HoverText from "../components/hoverAnimation";
 
 export default function ResumePage() {
-  const pro = [
-    "Javascript",
-    "React.js",
-    "Node.js",
-    "Express.js",
-    "Sequelize",
-    "MySQL",
-    "React-Native",
-    "Expo",
-    "Electron",
-    "Material-UI",
-    "Jira",
-    "Ubuntu",
-    "VMWare",
-  ];
-  const fun = [
-    "Javascript",
-    "React.js",
-    "Node.js",
-    "Express.js",
-    "Sequelize",
-    "MySQL",
-    "React-Native",
-    "Expo",
-    "Next.js",
-    "Typescript",
-    "MongoDB",
-    "MsSQL",
-    "Material-Tailwind",
-    "C#",
-    "GadotScripts",
-    "Python",
-    "Ubuntu",
-    "Arch Linux",
-  ];
-  const school = [
-    "Next.js",
-    "Typescript",
-    "MongoDB",
-    "OracleDB",
-    "Neo4j",
-    "MsSQL",
-    "PostgreSQL",
-    "Java",
-    "Java JPA",
-    "Java JSP",
-    "Java Servlet",
-    "Java JSF",
-    "Java/Jakarta EE Security",
-    "COBOL",
-    "Material-Tailwind",
-    "PHP",
-    "JavaScript",
-    "Python",
-  ];
-
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4 text-white">
       <div className="max-w-6xl w-full">
@@ -73,7 +16,7 @@ export default function ResumePage() {
               onPointerEnterCapture={undefined}
               onPointerLeaveCapture={undefined}
             >
-              Resume
+              <HoverText text="Resume" />
             </Typography>
           </div>
         </div>
