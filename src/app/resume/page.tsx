@@ -1,17 +1,17 @@
 import React from "react";
 
 import { Metadata } from "next";
-import ProjectPage from "./ProjectsPage";
+import ResumePage from "./ResumePage";
 
 export const metadata: Metadata = {
   title: "Olivie Bergeron",
-  description: "Projects",
+  description: "Resume",
 };
 
 export default function page() {
   return (
     <>
-      <ProjectPage />
+      <ResumePage />
     </>
   );
 }

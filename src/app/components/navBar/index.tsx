@@ -98,7 +98,7 @@ const NavbarComponent: React.FC = () => {
             onPointerEnterCapture={undefined}
             onPointerLeaveCapture={undefined}
           >
-            <span>Resume</span>
+            <Link href="/resume">Resume</Link>
           </Button>
         </div>
         <IconButton
@@ -157,7 +157,7 @@ const NavbarComponent: React.FC = () => {
                 onPointerLeaveCapture={undefined}
               >
                 <DocumentTextIcon className="h-5 w-5 mr-2" />
-                <span>Resume</span>
+                <Link href="/Resume">Resume</Link>
               </Button>
             </div>
           )}

@@ -9,8 +9,8 @@ interface GreyChipProps {
 const CustomChip = styled(Chip)(({ theme }) => ({
   backgroundColor: theme.palette.grey[800], // Darker grey
   color: theme.palette.common.white,
-  borderRadius: theme.shape.borderRadius * 4,
-  padding: theme.spacing(0.5),
+  borderRadius: theme.shape.borderRadius,
+  padding: theme.spacing(0.2),
   border: `1px solid ${theme.palette.grey[900]}`, // Even darker grey for the border
   "& .MuiChip-label": {
     display: "flex",
@@ -18,7 +18,7 @@ const CustomChip = styled(Chip)(({ theme }) => ({
     justifyContent: "center",
     width: "100%",
     height: "100%",
-    paddingBottom: 1,
+    padding: 2,
   },
 }));
 
