@@ -1,26 +1,60 @@
 "use client";
 import React from "react";
 import { Typography } from "@material-tailwind/react";
-import TypewriterComponent from "typewriter-effect";
-import SkillChip from "../components/chipComponent";
+import ProjectComponent from "../components/projectComponent";
 
 export default function ProjectPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4 text-white">
-      <div className="max-w-6xl w-full">
-        <div className="flex flex-col lg:flex-row justify-between items-start">
-          <div className="lg:w-1/2 mb-8 lg:mb-0 p-4">
-            <Typography
-              variant="h4"
-              className="text-4xl font-bold mb-4"
-              placeholder={undefined}
-              onPointerEnterCapture={undefined}
-              onPointerLeaveCapture={undefined}
-            >
-              Projects
-            </Typography>
-          </div>
-        </div>
+      {/* Page Heading */}
+      <Typography
+        variant="h4"
+        className="text-4xl font-bold mb-12 text-center"
+        placeholder={undefined}
+        onPointerEnterCapture={undefined}
+        onPointerLeaveCapture={undefined}
+      >
+        Projects
+      </Typography>
+
+      {/* Projects Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl w-full">
+        <ProjectComponent
+          time="June 2024"
+          img="https://example.com/project-image.jpg"
+          name="My Awesome Project"
+          description="This project involves building a full-stack application with React and Node.js."
+        />
+        <ProjectComponent
+          time="April 2024"
+          img="https://example.com/another-project.jpg"
+          name="Another Cool Project"
+          description="This project showcases a beautiful portfolio website built with Next.js."
+        />
+        <ProjectComponent
+          time="April 2024"
+          img="https://example.com/another-project.jpg"
+          name="Another Cool Project"
+          description="This project showcases a beautiful portfolio website built with Next.js."
+        />
+        <ProjectComponent
+          time="April 2024"
+          img="https://example.com/another-project.jpg"
+          name="Another Cool Project"
+          description="This project showcases a beautiful portfolio website built with Next.js."
+        />
+        <ProjectComponent
+          time="April 2024"
+          img="https://example.com/another-project.jpg"
+          name="Another Cool Project"
+          description="This project showcases a beautiful portfolio website built with Next.js."
+        />
+        <ProjectComponent
+          time="April 2024"
+          img="https://example.com/another-project.jpg"
+          name="Another Cool Project"
+          description="This project showcases a beautiful portfolio website built with Next.js."
+        />
       </div>
     </div>
   );
