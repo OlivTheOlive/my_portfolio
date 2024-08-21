@@ -4,7 +4,7 @@ import {
   Typography,
   IconButton,
   Button,
-  MobileNav,
+  Collapse,
 } from "@material-tailwind/react";
 import Link from "next/link";
 import React from "react";
@@ -67,40 +67,35 @@ const NavbarComponent: React.FC = () => {
 
   return (
     <Navbar
-      className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 border-none shadow-none"
-      style={{ background: "rgba(0, 0, 0, 0)" }}
+      className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 border-none shadow-none bg-inherit"
       placeholder={undefined}
       onPointerEnterCapture={undefined}
       onPointerLeaveCapture={undefined}
     >
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
-        <Typography
-          as="a"
-          href="/"
-          className="mr-4 cursor-pointer py-1.5 font-medium no-underline"
-          style={{ fontSize: 30 }}
+        <Button
+          className="text-lg bg-inherit"
           placeholder={undefined}
           onPointerEnterCapture={undefined}
           onPointerLeaveCapture={undefined}
         >
-          <Link href="/" className="flex items-center no-underline">
+          <Link href="/" className="flex items-center no-underline ">
             OB
           </Link>
-        </Typography>
+        </Button>
+
         <div className="hidden lg:block">{navList}</div>
-        <div className="flex items-center gap-x-1">
-          <Button
-            variant="text"
-            size="sm"
-            className="hidden lg:inline-block"
-            style={{ fontSize: 20 }}
-            placeholder={undefined}
-            onPointerEnterCapture={undefined}
-            onPointerLeaveCapture={undefined}
-          >
-            <Link href="/resume">Resume</Link>
-          </Button>
-        </div>
+        <Button
+          className="text-lg bg-inherit"
+          placeholder={undefined}
+          onPointerEnterCapture={undefined}
+          onPointerLeaveCapture={undefined}
+        >
+          <Link href="/resume" className="flex items-center no-underline ">
+            Resume
+          </Link>
+        </Button>
+
         <IconButton
           variant="text"
           className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
@@ -142,27 +137,16 @@ const NavbarComponent: React.FC = () => {
           )}
         </IconButton>
       </div>
-      <MobileNav open={openNav}>
+      <Collapse open={openNav}>
         <div className="container mx-auto flex flex-col items-center justify-center">
           {navList}
           {openNav && (
             <div className="flex flex-col items-center gap-x-1 mt-4">
-              <Button
-                fullWidth
-                variant="text"
-                size="sm"
-                className="flex items-center"
-                placeholder={undefined}
-                onPointerEnterCapture={undefined}
-                onPointerLeaveCapture={undefined}
-              >
-                <DocumentTextIcon className="h-5 w-5 mr-2" />
-                <Link href="/Resume">Resume</Link>
-              </Button>
+              <Link href="/Resume">Resume</Link>
             </div>
           )}
         </div>
-      </MobileNav>
+      </Collapse>
     </Navbar>
   );
 };
