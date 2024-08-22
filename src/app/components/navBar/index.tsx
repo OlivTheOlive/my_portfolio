@@ -1,9 +1,13 @@
-import { DocumentTextIcon } from "@heroicons/react/24/outline";
+import {
+  CodeBracketSquareIcon,
+  DocumentTextIcon,
+  HomeModernIcon,
+  UserCircleIcon,
+} from "@heroicons/react/24/outline";
 import {
   Navbar,
   Typography,
   IconButton,
-  Button,
   Collapse,
 } from "@material-tailwind/react";
 import Link from "next/link";
@@ -11,16 +15,22 @@ import React from "react";
 
 const NavbarComponent: React.FC = () => {
   const [openNav, setOpenNav] = React.useState(false);
+  const [isLargeScreen, setIsLargeScreen] = React.useState<boolean>(true);
 
   React.useEffect(() => {
-    window.addEventListener(
-      "resize",
-      () => window.innerWidth >= 960 && setOpenNav(false)
-    );
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth >= 960);
+      if (window.innerWidth >= 960) setOpenNav(false);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Trigger on mount to check initial size
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const navList = (
-    <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+    <ul className="flex flex-col items-center gap-2 lg:flex-row lg:items-center lg:gap-6">
       <Typography
         as="li"
         variant="small"
@@ -31,6 +41,7 @@ const NavbarComponent: React.FC = () => {
         onPointerLeaveCapture={undefined}
       >
         <Link href="/" className="flex items-center no-underline">
+          <HomeModernIcon className="h-5 w-5" />
           Home
         </Link>
       </Typography>
@@ -45,6 +56,7 @@ const NavbarComponent: React.FC = () => {
         onPointerLeaveCapture={undefined}
       >
         <Link href="/about" className="flex items-center no-underline">
+          <UserCircleIcon className="h-5 w-5" />
           About
         </Link>
       </Typography>
@@ -59,6 +71,7 @@ const NavbarComponent: React.FC = () => {
         onPointerLeaveCapture={undefined}
       >
         <Link href="/projects" className="flex items-center no-underline">
+          <CodeBracketSquareIcon className="h-5 w-5" />
           Projects
         </Link>
       </Typography>
@@ -72,29 +85,36 @@ const NavbarComponent: React.FC = () => {
       onPointerEnterCapture={undefined}
       onPointerLeaveCapture={undefined}
     >
-      <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
-        <Button
-          className="text-lg bg-inherit"
-          placeholder={undefined}
-          onPointerEnterCapture={undefined}
-          onPointerLeaveCapture={undefined}
-        >
-          <Link href="/" className="flex items-center no-underline ">
+      <div
+        className="container mx-auto grid grid-cols-3 items-center"
+        style={{
+          gridTemplateColumns: "20% 60% 20%", // Defines the 20-60-20 grid layout
+        }}
+      >
+        <div className="flex justify-start">
+          <Link
+            href="/"
+            className="flex items-center no-underline text-lg bg-inherit rounded-full"
+          >
             OB
           </Link>
-        </Button>
+        </div>
 
-        <div className="hidden lg:block">{navList}</div>
-        <Button
-          className="text-lg bg-inherit"
-          placeholder={undefined}
-          onPointerEnterCapture={undefined}
-          onPointerLeaveCapture={undefined}
-        >
-          <Link href="/resume" className="flex items-center no-underline ">
-            Resume
-          </Link>
-        </Button>
+        <div className="flex justify-center">
+          <div className="hidden lg:block">{navList}</div>
+        </div>
+
+        <div className="flex justify-end">
+          {isLargeScreen && (
+            <Link
+              href="/resume"
+              className="flex items-center no-underline text-lg bg-inherit rounded-full"
+            >
+              <DocumentTextIcon className="h-5 w-5 mr-1" />
+              Resume
+            </Link>
+          )}
+        </div>
 
         <IconButton
           variant="text"
@@ -140,11 +160,13 @@ const NavbarComponent: React.FC = () => {
       <Collapse open={openNav}>
         <div className="container mx-auto flex flex-col items-center justify-center">
           {navList}
-          {openNav && (
-            <div className="flex flex-col items-center gap-x-1 mt-4">
-              <Link href="/Resume">Resume</Link>
-            </div>
-          )}
+
+          <div className="flex flex-col items-center gap-x-1 mt-4">
+            <Link href="/resume" className="flex items-center">
+              <DocumentTextIcon className="h-5 w-5 mr-1" />
+              Resume
+            </Link>
+          </div>
         </div>
       </Collapse>
     </Navbar>
