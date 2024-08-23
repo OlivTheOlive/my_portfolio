@@ -10,13 +10,22 @@ export default function ProjectPage() {
     {
       id: 1,
       title: "Zoho Customer Portal Prototype",
-      description: "test",
+      description:
+        "This project is a robust backend Node.js application designed specifically for a ZOHO environment, developed as part of my Software Development class, where I served as the team lead. My primary responsibility was managing the team's task separation and leading the development of the backend Node.js application, while my team members built a frontend prototype using React.js. Initially, our goal was to develop a web app using Zoho Creator; however, due to platform limitations, we proposed a more flexible solution using the MERN stack. The backend seamlessly integrates with the ZOHO API to manage and synchronize data from ZOHO Projects, including tasks, while automatically updating MongoDB every 12 hours. The app also refreshes the ACCESS_TOKEN when necessary and provides API routes for the frontend to display project data in real time. The client was pleased with our rapid turnaround and proposed solution, but at the time, they were uncertain about their long-term future with ZOHO, which could render the prototype potentially obsolete as they continue to research the best platform for their needs.",
       date: "July-Aug 2024",
       urls: [
         {
           title: "BackEnd",
-          url: "https://github.com/OlivTheOlive/RoadRunnerV2",
+          url: "https://github.com/OlivTheOlive/clientZohoNodeApi",
         },
+      ],
+      tools: [
+        "TypeScript",
+        "Node.js",
+        "Express.js",
+        "Mongoose",
+        "Nodemon",
+        "ZOHO API Console",
       ],
     },
     {
@@ -26,9 +35,27 @@ export default function ProjectPage() {
       date: "June-Aug 2024",
       urls: [
         {
-          title: "BackEnd",
+          title: "App",
           url: "https://github.com/OlivTheOlive/RoadRunnerV2",
         },
+        {
+          title: "Backend",
+          url: "https://github.com/Say1491/DB-server",
+        },
+      ],
+      tools: [
+        "JavaScript",
+        "React-Native",
+        "Axio",
+        "Geolib",
+        "react-native-maps",
+        "Expo",
+        "expo-location",
+        "Mapbox Polyline",
+        "Express.js",
+        "Jest",
+        "Mongoose",
+        "Nodemon",
       ],
     },
     {
@@ -45,6 +72,16 @@ export default function ProjectPage() {
           title: "BackEnd",
           url: "https://github.com/OlivTheOlive/csvEditorBackend",
         },
+      ],
+      tools: [
+        "TypeScript",
+        "Node.js",
+        "Express.js",
+        "MUI",
+        "PapaParse",
+        "React.js",
+        "Next.js",
+        "Jest",
       ],
     },
   ];

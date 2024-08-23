@@ -15,7 +15,8 @@ interface Project {
   title: string;
   description: string;
   date: string;
-  urls: Array<{ title: string; url: string }>; // Array of URLs with title and url
+  urls: Array<{ title: string; url: string }>;
+  tools: Array<string>;
 }
 
 interface AccordionComponentProps {
@@ -70,6 +71,7 @@ export function AccordionComponent({ projects }: AccordionComponentProps) {
           >
             <div className="grid grid-cols-[60%_35%_5%] items-center w-full">
               <Typography
+                variant="h4"
                 placeholder={undefined}
                 onPointerEnterCapture={undefined}
                 onPointerLeaveCapture={undefined}
@@ -78,6 +80,7 @@ export function AccordionComponent({ projects }: AccordionComponentProps) {
               </Typography>
               <Typography
                 className="text-right"
+                variant="h6"
                 placeholder={undefined}
                 onPointerEnterCapture={undefined}
                 onPointerLeaveCapture={undefined}
@@ -92,6 +95,7 @@ export function AccordionComponent({ projects }: AccordionComponentProps) {
           <AccordionBody>
             <Typography
               className="mb-4"
+              color="white"
               placeholder={undefined}
               onPointerEnterCapture={undefined}
               onPointerLeaveCapture={undefined}
