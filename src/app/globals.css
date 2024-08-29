@@ -23,6 +23,11 @@ body {
   /* cursor: none !important; */
 }
 
+.navbar-gradient {
+  background-clip: padding-box;
+  backdrop-filter: blur(8px);
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

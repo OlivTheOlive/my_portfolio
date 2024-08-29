@@ -80,7 +80,7 @@ const NavbarComponent: React.FC = () => {
 
   return (
     <Navbar
-      className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 border-none shadow-none bg-inherit"
+      className="navbar-gradient navbar-blur sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 border-none shadow-none bg-transparent"
       placeholder={undefined}
       onPointerEnterCapture={undefined}
       onPointerLeaveCapture={undefined}
