@@ -9,7 +9,18 @@ const config: Config = {
     "node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        rotateLoop: "rotateLoop 5s infinite",
+      },
+      keyframes: {
+        rotateLoop: {
+          "0%": { transform: "rotate(-10deg)" },
+          "50%": { transform: "rotate(10deg)" },
+          "100%": { transform: "rotate(-10deg)" },
+        },
+      },
+    },
   },
   plugins: [],
 };

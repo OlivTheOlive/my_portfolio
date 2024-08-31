@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import anime from "animejs";
 
 const WaterDropGrid: React.FC = () => {
@@ -9,12 +9,36 @@ const WaterDropGrid: React.FC = () => {
   );
 };
 
-const GRID_WIDTH = 25;
-const GRID_HEIGHT = 15;
-
 interface DotGridProps {}
 
 const DotGrid: React.FC<DotGridProps> = () => {
+  const [gridWidth, setGridWidth] = useState(5); // Default grid width for mobile
+  const [gridHeight, setGridHeight] = useState(10); // Default grid height
+
+  // Function to dynamically calculate the number of columns based on screen size
+  const calculateGridSize = () => {
+    const screenWidth = window.innerWidth;
+    if (screenWidth < 640) {
+      setGridWidth(10); // For small screens
+      setGridHeight(10);
+    } else if (screenWidth < 768) {
+      setGridWidth(12); // For medium screens
+      setGridHeight(10);
+    } else if (screenWidth < 1024) {
+      setGridWidth(15); // For large screens
+      setGridHeight(10);
+    } else {
+      setGridWidth(20); // For extra-large screens
+      setGridHeight(15);
+    }
+  };
+
+  useEffect(() => {
+    calculateGridSize(); // Initial calculation on mount
+    window.addEventListener("resize", calculateGridSize); // Recalculate on resize
+    return () => window.removeEventListener("resize", calculateGridSize); // Cleanup on unmount
+  }, []);
+
   const handleDotClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const target = e.target as HTMLElement;
     const index = target.dataset.index;
@@ -36,7 +60,7 @@ const DotGrid: React.FC<DotGridProps> = () => {
         { value: 0.5, easing: "easeInOutQuad", duration: 500 },
       ],
       delay: anime.stagger(100, {
-        grid: [GRID_WIDTH, GRID_HEIGHT],
+        grid: [gridWidth, gridHeight], // Use dynamic grid width
         from: parseInt(index, 10),
       }),
     });
@@ -45,8 +69,8 @@ const DotGrid: React.FC<DotGridProps> = () => {
   const dots = [];
   let index = 0;
 
-  for (let i = 0; i < GRID_WIDTH; i++) {
-    for (let j = 0; j < GRID_HEIGHT; j++) {
+  for (let i = 0; i < gridWidth; i++) {
+    for (let j = 0; j < gridHeight; j++) {
       dots.push(
         <div
           className="group cursor-crosshair rounded-full p-2 transition-colors hover:bg-slate-600"
@@ -66,8 +90,8 @@ const DotGrid: React.FC<DotGridProps> = () => {
   return (
     <div
       onClick={handleDotClick}
-      style={{ gridTemplateColumns: `repeat(${GRID_WIDTH}, 1fr)` }}
-      className="grid w-fit"
+      style={{ gridTemplateColumns: `repeat(${gridWidth}, 1fr)` }} // Dynamic column count
+      className="grid w-fit gap-1"
     >
       {dots}
     </div>
