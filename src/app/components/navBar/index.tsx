@@ -94,7 +94,7 @@ const NavbarComponent: React.FC = () => {
         <div className="flex justify-start">
           <Link
             href="/"
-            className="flex items-center no-underline text-lg bg-inherit rounded-full"
+            className="flex items-center no-underline bg-inherit rounded-full text-lg"
           >
             OB
           </Link>
@@ -110,13 +110,13 @@ const NavbarComponent: React.FC = () => {
               href="/resume"
               className="flex items-center no-underline text-lg bg-inherit rounded-full"
             >
-              <DocumentTextIcon className="h-5 w-5 mr-1" />
+              <DocumentTextIcon className="h-6 w-6 mr-1" />
               Resume
             </Link>
           ) : (
             <IconButton
               variant="text"
-              className="h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent ml-auto lg:hidden"
+              className="h-8 w-8 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent ml-auto lg:hidden"
               ripple={false}
               onClick={() => setOpenNav(!openNav)}
               placeholder={undefined}
@@ -160,9 +160,9 @@ const NavbarComponent: React.FC = () => {
       <Collapse open={openNav}>
         <div className="container mx-auto flex flex-col items-center justify-center">
           {navList}
-          <div className="flex flex-col items-center gap-x-1 mt-4">
+          <div className="flex flex-col items-center gap-x-2 mt-4">
             <Link href="/resume" className="flex items-center">
-              <DocumentTextIcon className="h-5 w-5 mr-1" />
+              <DocumentTextIcon className="h-6 w-6 mr-1" />
               Resume
             </Link>
           </div>
