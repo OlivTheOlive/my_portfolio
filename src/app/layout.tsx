@@ -82,23 +82,23 @@ export default function RootLayout({
         ) : (
           <div>
             <NavbarComponent />
-            {/* Sun Animation in Background */}
+
             <div
               id="sun-animation"
               className="fixed top-10 left-0"
               style={{
-                width: "150px",
-                height: "150px",
-                zIndex: -1, // Put the sun behind the content
-                pointerEvents: "none", // Prevent the sun from capturing mouse events
+                width: "100px",
+                height: "100px",
+                zIndex: -1,
+                pointerEvents: "none",
               }}
             >
               <Lottie animationData={Sun} loop={true} />
             </div>
             <div
               style={{
-                position: "relative", // Ensure the content is above the sun
-                zIndex: 1, // Higher z-index than the sun
+                position: "relative",
+                zIndex: 1,
               }}
             >
               {children}
