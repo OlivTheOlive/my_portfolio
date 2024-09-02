@@ -2,6 +2,7 @@
 "use client";
 import React from "react";
 import PDFViewer from "./pdfViewer"; // Import the PDFViewer component
+import { Typography } from "@material-tailwind/react";
 
 export default function ResumePage() {
   return (

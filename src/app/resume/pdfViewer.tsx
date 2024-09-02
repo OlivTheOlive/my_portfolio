@@ -2,6 +2,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import * as pdfjsLib from "pdfjs-dist";
+import { Typography } from "@material-tailwind/react";
 
 // Set workerSrc for PDF.js to the locally hosted file
 pdfjsLib.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.js";
@@ -88,12 +89,20 @@ const PDFViewer: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4 text-white">
-      <div className="max-w-2xl w-full text-center">
+      <Typography
+        variant="h4"
+        className="text-4xl font-bold mb-12 text-center"
+        placeholder={undefined}
+        onPointerEnterCapture={undefined}
+        onPointerLeaveCapture={undefined}
+      >
+        Resume
+      </Typography>
+      <div className="max-w-2xl  text-center">
         <div className="p-4 mb-8 rounded bg-gray-900">
           <canvas ref={canvasRef} className="w-full" />
         </div>
 
-        {/* Pagination Controls with Centered Text */}
         <div className="mt-4 flex justify-center items-center gap-4">
           <button
             onClick={handlePreviousPage}

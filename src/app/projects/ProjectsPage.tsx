@@ -4,6 +4,7 @@ import { Typography } from "@material-tailwind/react";
 import ProjectComponent from "../components/projectComponent";
 import { CarouselComponent } from "../components/carouselComponent";
 import { AccordionComponent } from "../components/accordionComponent";
+import ProjectCard from "../components/projectComponent";
 
 export default function ProjectPage() {
   const project = [
@@ -31,7 +32,8 @@ export default function ProjectPage() {
     {
       id: 2,
       title: "RoadRunner",
-      description: "test",
+      description:
+        "RoadRunner is a mobile application built for real-time route tracking and management, designed to assist users in navigating efficiently and safely. Developed with React Native and powered by the Expo framework, this app leverages various libraries like react-native-maps and Mapbox Polyline to provide accurate and dynamic route visualization. The application integrates Geolib and expo-location for precise location tracking and geofencing capabilities, enhancing navigation features. The backend, built with Express.js and MongoDB (Mongoose), handles real-time data processing, storage, and synchronization, ensuring a smooth and reliable user experience. Axios is used for seamless API communication between the app and backend services. This application was developed as part of a database course project, focusing on integrating the Google Directions API to offer advanced routing and navigation capabilities.",
       date: "June-Aug 2024",
       urls: [
         {
@@ -56,13 +58,15 @@ export default function ProjectPage() {
         "Jest",
         "Mongoose",
         "Nodemon",
+        "Google Direction API",
       ],
     },
     {
       id: 3,
-      title: "CSV editor",
-      description: "test",
-      date: " May-Aug 2024",
+      title: "CSV Editor",
+      description:
+        "A full-stack web application designed to provide a robust and user-friendly interface for uploading, editing, and exporting CSV files. Built with a React.js frontend and a Node.js/Express.js backend, the CSV Editor allows users to seamlessly manipulate large datasets. The application integrates MUI for a clean and intuitive user interface and leverages PapaParse for efficient CSV parsing and processing. The backend is built with TypeScript for enhanced type safety and maintainability, and provides RESTful API endpoints for CRUD operations on CSV data. The project also features robust error handling and data validation to ensure data integrity. End-to-end testing is implemented with Jest to guarantee reliability and smooth functionality across different user scenarios. This tool was build during my Language Research class where the goal was to learn a new language and build an application with it.",
+      date: "May-Aug 2024",
       urls: [
         {
           title: "FrontEnd",
@@ -84,23 +88,43 @@ export default function ProjectPage() {
         "Jest",
       ],
     },
+
+    {
+      id: 4,
+      title: "Portfolio",
+      description:
+        "A personal portfolio website designed to showcase my skills, projects, and experience in software development. Built using Next.js and React.js for a seamless and interactive user experience, the website integrates modern UI libraries like Material Tailwind and MUI for an elegant and responsive design. The project emphasizes performance and accessibility, ensuring smooth navigation across devices. Tailwind CSS is leveraged to provide a consistent, modern aesthetic while maintaining a minimalist and clean interface.",
+      date: "Aug-Sept 2024",
+      urls: [
+        {
+          title: "FrontEnd",
+          url: "https://github.com/OlivTheOlive/my_portfolio",
+        },
+      ],
+      tools: [
+        "TypeScript",
+        "MUI",
+        "Tailwind Css",
+        "Material Tailwind",
+        "React.js",
+        "Next.js",
+      ],
+    },
   ];
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4 text-white">
-      <Typography
-        variant="h4"
-        className="text-4xl font-bold mb-12 text-center"
-        placeholder={undefined}
-        onPointerEnterCapture={undefined}
-        onPointerLeaveCapture={undefined}
-      >
-        Projects
-      </Typography>
-
-      <div className="w-9/12">
-        <AccordionComponent projects={project} />
+      <div className="lg:w-9/12 mb-8 lg:mb-0 p-4">
+        <h1 className="text-3xl font-bold mb-6 text-center text-white">
+          Projects
+        </h1>
+        {project.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
       </div>
+      {/* <div className="w-9/12">
+        <AccordionComponent projects={project} />
+      </div> */}
     </div>
   );
 }
