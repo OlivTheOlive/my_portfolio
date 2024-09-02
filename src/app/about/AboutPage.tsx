@@ -77,10 +77,10 @@ export default function AboutPage() {
             </Typography>
             <div>
               <p className="text-lg leading-7">
-                Hi, my name is <b>Olivie Bergeron</b> and I am from Ottawa. I'm
-                a <b>MERN stack web developer</b> and a final year college
-                student pursuing <b>Computer Programming</b> at Algonquin
-                College.
+                Hi, my name is <b>Olivie Bergeron</b> and I am from Ottawa.
+                I&apos;m a <b>MERN stack web developer</b> and a final year
+                college student pursuing <b>Computer Programming</b> at
+                Algonquin College.
                 <br />
                 <br />I have done an internship as a <b>
                   full-stack developer

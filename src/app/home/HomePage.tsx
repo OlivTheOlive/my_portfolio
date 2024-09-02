@@ -46,7 +46,7 @@ const HomePage: React.FC = () => {
             <HoverText text="Hello There!" />
           </h1>
           <h1 className="text-4xl font-bold">
-            I'm{" "}
+            I&apos;m{" "}
             <b>
               <HoverText text="Olivie Bergeron" />
             </b>
@@ -101,16 +101,16 @@ const HomePage: React.FC = () => {
             <AccordionBody>
               <div className="max-h-[500px] overflow-auto space-y-4 text-base font-medium leading-7 tracking-wide text-justify text-white">
                 <p>
-                  I'm passionate about transforming raw ideas into meaningful
-                  products that make a difference in people's lives. I seek work
-                  that pushes my boundaries as a developer and allows me to
-                  create something I can truly be proud of.
+                  I&apos;m passionate about transforming raw ideas into
+                  meaningful products that make a difference in people&apos;s
+                  lives. I seek work that pushes my boundaries as a developer
+                  and allows me to create something I can truly be proud of.
                 </p>
                 <p>
                   My skills include a strong foundation in <b>Java</b> and{" "}
                   <b>JavaScript</b>, with working knowledge of <b>Python</b>.
-                  I'm actively involved in projects using the <b>MERN</b> stack
-                  and currently expanding my expertise in <b>Next.js</b>,{" "}
+                  I&apos;m actively involved in projects using the <b>MERN</b>{" "}
+                  stack and currently expanding my expertise in <b>Next.js</b>,{" "}
                   <b>TypeScript</b>, and <b>C#</b>.
                 </p>
               </div>
