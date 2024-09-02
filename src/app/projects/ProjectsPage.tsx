@@ -1,9 +1,5 @@
 "use client";
 import React from "react";
-import { Typography } from "@material-tailwind/react";
-import ProjectComponent from "../components/projectComponent";
-import { CarouselComponent } from "../components/carouselComponent";
-import { AccordionComponent } from "../components/accordionComponent";
 import ProjectCard from "../components/projectComponent";
 
 export default function ProjectPage() {
