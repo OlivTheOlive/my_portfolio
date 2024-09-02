@@ -19,13 +19,6 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: radial-gradient(
-        circle,
-        rgba(255, 215, 0, 0.8) 10%,
-        rgba(255, 165, 0, 0.6) 30%,
-        rgba(0, 0, 0, 0) 70%
-      )
-      no-repeat,
-    radial-gradient(
       circle at 60% 50%,
       rgba(255, 255, 255, 0.6) 1.5px,
       transparent 2px
@@ -66,13 +59,14 @@ body {
       transparent 1px
     ),
     linear-gradient(180deg, #000008 0%, #003e92 100%);
-  background-size: 300px 300px, auto, auto, auto, auto, auto, auto, auto, auto,
-    cover;
+  background-size: auto, auto, auto, auto, auto, auto, auto, auto, cover;
 
-  background-position: 0px 0px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+  background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
 
-  background-attachment: local, scroll, scroll, scroll, scroll, scroll, scroll,
-    scroll, scroll;
+  background-attachment: scroll, scroll, scroll, scroll, scroll, scroll, scroll,
+    scroll;
+
+  transition: background-position 0.1s ease-out;
 }
 .navbar-gradient {
   background-clip: padding-box;
