@@ -7,6 +7,7 @@ import FooterComponent from "./components/footer";
 import { GridLoader } from "react-spinners";
 import { useEffect, useState } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 import dynamic from "next/dynamic";
 import Sun from "@/app/lottieAnimation/sun.json";
 
@@ -69,6 +70,7 @@ export default function RootLayout({
 
       <body className={inter.className}>
         <SpeedInsights />
+        <Analytics />
         {loading ? (
           <div className="loader">
             <GridLoader
