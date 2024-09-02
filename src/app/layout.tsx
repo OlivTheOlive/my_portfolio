@@ -6,6 +6,7 @@ import NavbarComponent from "./components/navBar";
 import FooterComponent from "./components/footer";
 import { GridLoader } from "react-spinners";
 import { useEffect, useState } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,6 +40,7 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
+        <SpeedInsights />
         {loading ? (
           <div className="loader">
             <GridLoader
