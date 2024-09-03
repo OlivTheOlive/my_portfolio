@@ -33,7 +33,6 @@ export default function RootLayout({
     return () => clearTimeout(timer);
   }, []);
 
-  // Sun Animation Movement
   useEffect(() => {
     const handleScroll = () => {
       const scrollPositionY = window.scrollY;
@@ -52,7 +51,6 @@ export default function RootLayout({
 
     window.addEventListener("scroll", handleScroll);
 
-    // Cleanup event listener on component unmount
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -85,7 +83,7 @@ export default function RootLayout({
           <div>
             <NavbarComponent />
 
-            <div
+            {/* <div
               id="sun-animation"
               className="fixed top-10 left-0"
               style={{
@@ -96,7 +94,7 @@ export default function RootLayout({
               }}
             >
               <Lottie animationData={Sun} loop={true} />
-            </div>
+            </div> */}
             <div
               style={{
                 position: "relative",
