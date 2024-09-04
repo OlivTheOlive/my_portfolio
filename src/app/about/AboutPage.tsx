@@ -77,23 +77,29 @@ export default function AboutPage() {
             </Typography>
             <div>
               <p className="text-lg leading-7">
-                Hi, my name is <b>Olivie Bergeron</b> and I am from Ottawa.
-                I&apos;m a <b>MERN stack web developer</b> and a final year
-                college student pursuing <b>Computer Programming</b> at
+                Hello! I&apos;m{" "}
+                <b className="text-[#9067c6]">Olivié Bergeron</b> from Ottawa.
+                I&apos;m a passionate{" "}
+                <b className="text-[#9067c6]">MERN stack web developer</b> and
+                an honors graduate in{" "}
+                <b className="text-[#9067c6]">Computer Programming</b> from
                 Algonquin College.
                 <br />
-                <br />I have done an internship as a <b>
-                  full-stack developer
-                </b>{" "}
-                at Nortac Defence, a situational awareness company. I love to
-                create original projects with beautiful designs; you can check
-                out some of my work in the projects section.
+                <br />I had the opportunity to intern as a{" "}
+                <b className="text-[#9067c6]">full-stack developer</b> at Nortac
+                Defence, a company specializing in situational awareness
+                solutions. I enjoy creating unique projects with captivating
+                designs—be sure to check out some of my school and personal work
+                in the projects section!
                 <br />
-                <br />I am <b>open</b> to new collaborations or work where I can
-                contribute and grow. Feel free to connect with me; links are in
+                <br />
+                I&apos;m always <b className="text-[#9067c6]">open</b> to new
+                collaborations and opportunities where I can both contribute and
+                learn. Feel free to connect with me; you can find my links in
                 the footer.
                 <br />
-                Apart from coding, I love making music and playing video games.
+                When I&apos;m not coding, you&apos;ll find me making music or
+                playing video games.
               </p>
             </div>
           </div>
@@ -130,7 +136,7 @@ export default function AboutPage() {
                   onPointerEnterCapture={undefined}
                   onPointerLeaveCapture={undefined}
                 >
-                  Professional Skills
+                  Professional Use
                 </Typography>
                 <div className="flex flex-wrap gap-2">
                   {pro.map((skill, index) => (
@@ -148,7 +154,7 @@ export default function AboutPage() {
                   onPointerEnterCapture={undefined}
                   onPointerLeaveCapture={undefined}
                 >
-                  For Fun
+                  Personal Use
                 </Typography>
                 <div className="flex flex-wrap gap-2">
                   {fun.map((skill, index) => (
@@ -166,7 +172,7 @@ export default function AboutPage() {
                   onPointerEnterCapture={undefined}
                   onPointerLeaveCapture={undefined}
                 >
-                  For School
+                  School Use
                 </Typography>
                 <div className="flex flex-wrap gap-2">
                   {school.map((skill, index) => (

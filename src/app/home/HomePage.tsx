@@ -46,9 +46,8 @@ const HomePage: React.FC = () => {
             <HoverText text="Hello There!" />
           </h1>
           <h1 className="text-4xl font-bold">
-            I&apos;m{" "}
             <b>
-              <HoverText text="Olivie Bergeron" />
+              <HoverText text=" I am Olivié Bergeron" />
             </b>
           </h1>
           <h3 className="text-lg font-semibold mt-4">

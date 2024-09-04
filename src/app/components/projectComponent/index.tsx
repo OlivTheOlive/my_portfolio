@@ -17,11 +17,26 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+  const formatDescription = (description: string) => {
+    const parts = description.split(/(\*\*[^*]+\*\*)/g);
+    return parts.map((part, index) =>
+      part.startsWith("**") && part.endsWith("**") ? (
+        <b key={index} className="text-[#9067c6]">
+          {part.slice(2, -2)}
+        </b>
+      ) : (
+        part
+      )
+    );
+  };
+
   return (
     <div className="relative backdrop-blur-lg backdrop-brightness-110   text-white p-6 shadow-2xl mb-6 rounded-tr-lg rounded-bl-lg ">
       <h2 className="text-2xl font-bold mb-2">{project.title}</h2>
       <p className="text-gray-300 mb-4">{project.date}</p>
-      <p className="mb-4 text-justify">{project.description}</p>
+      <p className="mb-4 text-justify">
+        {formatDescription(project.description)}
+      </p>{" "}
       <div className="mb-4">
         <h3 className="font-semibold mb-2">Tools Used:</h3>
         <ul className="flex flex-wrap gap-2">
