@@ -69,9 +69,11 @@ body {
   transition: background-position 0.1s ease-out;
 }
 .navbar-gradient {
-  background-clip: padding-box;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.3); 
+  transition: background-color 0.3s ease; 
 }
+
 
 @layer utilities {
   .text-balance {
