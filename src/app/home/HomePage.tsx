@@ -36,7 +36,7 @@ const HomePage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen px-4 md:px-20 py-8 space-y-40">
+    <div className="min-h-screen px-4 md:px-20 py-8 space-y-40 text-white">
       <section
         id="home"
         className="min-h-screen flex flex-col justify-center items-center space-y-8"
